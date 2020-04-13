@@ -1,38 +1,75 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+	height: 700px;
+	width: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	font-size: 18px;
+	background-image: url(https://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg);
+	color: white;
+	background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-section {
+	width: 100%;
+	display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.welcome-section {
+	text-align: center;
+	align-items: center;
+	width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown-menu {
+	height: 200px;
+	width: 120%;
+	position: fixed;
+	top: 100px;
+	background-color: rgb(67, 65, 65);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	border-top: 2px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.desktop-links {
+	display: none;
+	width: 100vw;
+}
+
+@media (min-width: 500px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+		box-sizing: border-box;
+	}
+
+	.dropdown-button {
+		margin-right: 25px;
+	}
+}
+
+/* ------------------------------------------------------ */
+
+@media (min-width: 1000px) {
+	.dropdown-button {
+		display: none;
+	}
+
+	.dropdown-menu {
+		display: none;
+	}
+
+	.desktop-links {
+		width: 45%;
+		display: flex;
+		justify-content: space-around;
+	}
 }
