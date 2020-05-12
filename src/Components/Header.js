@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class Header extends React.Component {
-	constructor() {
-		super();
+class Header extends Component {
+	constructor(props) {
+		super(props);
 		this.state = {
-			dropdownView: false
+			dropdownView: false,
 		};
 	}
 
@@ -14,37 +14,29 @@ class Header extends React.Component {
 
 	render() {
 		return (
-			<div className="header">
-				<div>
-					<div className="dropdown-button" onClick={this.handleToggle}>
+			<div className="header-wrapper">
+				<h3 className="logo">Start Bootstrap</h3>
+				<div className="btn-container">
+					<button className="dropdown-btn" onClick={this.handleToggle}>
 						Menu
-					</div>
-					<div className="nav-section">
-						{this.state.dropdownView ? (
-							<nav className="dropdown-menu">
-								<span>SERVICES</span>
-								<span>PORTFOLIO</span>
-								<span>ABOUT</span>
-								<span>TEAM</span>
-								<span>CONTACT</span>
-							</nav>
-						) : null}
-
-						<nav className="desktop-links">
-							<span>SERVICES</span>
-							<span>PORTFOLIO</span>
-							<span>ABOUT</span>
-							<span>TEAM</span>
-							<span>CONTACT</span>
-						</nav>
-					</div>
+					</button>
 				</div>
-
-				<div className="welcome-section">
-					<h1>Welcome To Our Studio!</h1>
-					<h1>IT'S NICE TO MEET YOU</h1>
-					<button className="btn">TELL ME MORE</button>
-				</div>
+				{this.state.dropdownView ? (
+					<nav className="dropdown-menu">
+						<span>SERVICES</span>
+						<span>PORTFOLIO</span>
+						<span>ABOUT</span>
+						<span>TEAM</span>
+						<span>CONTACT</span>
+					</nav>
+				) : null}
+				<nav className="desktop-nav">
+					<span>SERVICES</span>
+					<span>PORTFOLIO</span>
+					<span>ABOUT</span>
+					<span>TEAM</span>
+					<span>CONTACT</span>
+				</nav>
 			</div>
 		);
 	}
